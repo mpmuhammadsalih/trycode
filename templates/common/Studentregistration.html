@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table>
+        <h1>Registration Form</h1>
+        <tr>
+          <td><label for="">Name</label></td>
+          <td><input type="text" name="name" id="" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="">Email</label></td>
+          <td><input type="text" name="email" id="" /></td>
+        </tr>
+        <tr>
+          <td><label for="">Phoneno</label></td>
+          <td><input type="text" name="phoneno" id="" /></td>
+        </tr>
+        <tr>
+          <td><label for="">Dob</label></td>
+          <td><input type="date" name="dob" id="" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="">Gender</label></td>
+          <td>
+            <input type="radio" name="gender" id="" value="Male" />
+            <label for="">Male</label>
+            <input type="radio" name="gender" id="" value="Female" />
+            <label for="">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">Choose District:</label></td>
+          <td>
+            <select name="district" id="">
+              <option value="calicut">Calicut</option>
+              <option value="Kannur">Kannur</option>
+              <option value="Malappuram">Malappuram</option>
+              <option value="Palakkad">Palakkad</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Hobbies</td>
+          <td>
+            <input type="checkbox" name="cricket" id="" />
+            <label for="">Cricket</label>
+            <input type="checkbox" name="football" id="" />
+            <label for="">Football</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Profile pic</td>
+          <td><input type="file" name="profileimg" /></td>
+        </tr>
+        <tr>
+          <td>User Type</td>
+          <td><select name="Roles" id="">
+            <option value="STUDENT">Student</option>
+            <option value="SALESMAN">Salesman</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td>User Name</td>
+          <td><input type="text" name="username" id="" /></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="text" name="password" id="" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table>
+        <h1>Registration Update Form</h1>
+        <tr>
+          <td><label for="">Name</label></td>
+          <td><input type="text" name="name" id="" value="{{reg.name}}" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="">Email</label></td>
+          <td>
+            <input type="text" name="email" id="" value="{{reg.email}}" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">Phoneno</label></td>
+          <td>
+            <input type="text" name="phoneno" id="" value="{{reg.phoneno}}" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">Dob</label></td>
+          <td><input type="date" name="dob" id="" value="{{reg.dob}}" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="">Gender</label></td>
+          <td>
+            <input type="radio" name="gender" id="" value='Male' {% if reg.gender == "Male" %} checked {% endif %}>
+            <label for="">Male</label>
+            <input type="radio" name="gender" id="" value='Female' {% if reg.gender == "Female" %} checked {% endif %}>
+            <label for="">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="">Choose District:</label></td>
+          <td>
+            <select name="district" id="" >
+              <option value="calicut" {% if reg.district == "calicut" %} selected {% endif %}>Calicut</option>
+              <option value="Kannur"  {% if reg.district == "Kannur" %} selected {% endif %}>Kannur</option>
+              <option value="Malappuram"  {% if reg.district == "Malappuram" %} selected {% endif %}>Malappuram</option>
+              <option value="Palakkad"  {% if reg.district == "Palakkad" %} selected {% endif %}>Palakkad</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Hobbies</td>
+          <td>
+            <input type="checkbox" name="cricket" id="" {%if reg.cricket  %} checked {%endif%} />
+            <label for="">Cricket</label>
+            <input type="checkbox" name="football" id="" {%if reg.football  %} checked {%endif%} />
+            <label for="">Football</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Profile pic</td>
+          <td><input type="file" name="profileimg" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

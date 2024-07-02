@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/users/Reglistdelete/{{reg.id}}" method="post">
+      {% csrf_token %}
+      <h1>Are u sure u want to delete?</h1>
+      {{reg.name}}-{{reg.address}}-{{reg.phoneno}}
+      <input type="submit" name="delete" />
+      <button><a href={% url 'abc' %}>back</a></button>
+    </form>
+  </body>
+</html>

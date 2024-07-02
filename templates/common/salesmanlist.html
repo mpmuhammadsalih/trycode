@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=1>
+        <tr>
+            <td>Id</td>
+            <td>Salesman</td>
+            <td>code</td>
+            <td>Branch</td>
+            <td>Profile</td>
+        
+    </tr>
+        
+        
+        {% for i in re %}
+        <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.salesmanname}}</td>
+        <td>{{i.salesmancode}}</td>
+        <td>{{i.branch}}</td>
+        {%if i.profileimg %}
+        <td><img src="{{i.profileimg.url}}" height="50" width="50">
+            {% endif %}
+        <td><a href="{% url 'salesupdate' i.id %}">Edit</a></td>
+        <td><a href="/users/salesmandelete/{{i.id}}">delete</a></td>
+        <td><a href="/users/salesmandeletesoft/{{i.id}}">Softdelete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

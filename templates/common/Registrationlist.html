@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=1>
+        <tr>
+            <td>id</td>
+            <td>defaultid</td>
+            <td>Name</td>
+            <td>Address</td>
+            <td>Phoneno</td>
+        
+    </tr>
+        
+        
+        {% for i in re %}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.phoneno}}</td>
+        {%if i.profileimg %}
+        <td><img src="{{i.profileimg.url}}" height="50" width="50">
+            {% endif %}
+
+        <td><a href="{% url 'regupdate' i.id %}">Edit</td>
+            <td><a href="/users/Reglistdelete/{{i.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

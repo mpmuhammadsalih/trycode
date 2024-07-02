@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="{% url 'regupdate' reg.id %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="">Name</label></td>
+          <td><input type="text" name="name" id="" value={{reg.name}} /></td>
+        </tr>
+        <tr>
+          <td><label for="">Address</label></td>
+          <td><input type="text" name="address" id="" value={{reg.address}}/></td>
+        </tr>
+        <tr>
+          <td><label for="">Phone</label></td>
+          <td><input type="text" name="phoneno" id="" value="{{reg.phoneno}}" /></td>
+        </tr>
+        <tr>
+            <td><label for="">Image</label></td>
+
+            <td><input type="file" name="profileimg" id="" value="{{reg.profileimg.url}}" /></td>
+          </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" name="Edit" /></td>
+          <td><a href={% url 'abc' %}>back</a></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

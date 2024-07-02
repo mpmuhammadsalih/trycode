@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=1>
+        <tr>
+            <td>id</td>
+            <td>Student Name</td>
+            <td>Email</td>
+            <td>Phone No</td>
+            <td>District</td>
+            <td>Gender</td>
+            <td>Dob</td>
+            <td>Image</td>
+            <td>Football</td>
+            <td>Cricket</td>
+  
+    </tr>
+        
+        
+        {% for i in re %}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phoneno}}</td>
+        <td>{{i.district}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.dob}}</td>
+        {%if i.profileimg %}
+        <td><img src="{{i.profileimg.url}}" height="50" width="50">
+            {% endif %}
+       <td><input  type="checkbox" name="football" id=""  {% if i.football == True %} checked {% endif %} onclick="return false;" /></td>
+       <td><input type="checkbox" name="cricket" id=""  {% if i.cricket == True %} checked {% endif %}  onclick="return false;" /></td>
+
+
+        <td><a href="{% url 'supdate' i.id %}">Edit</td>
+            <td><a href="/users/Reglistdelete/{{i.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
